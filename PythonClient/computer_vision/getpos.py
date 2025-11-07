@@ -4,7 +4,7 @@
 import setup_path 
 import cosysairsim as airsim
 
-client = airsim.VehicleClient()
+client = airsim.VehicleClient("127.0.0.1")
 client.confirmConnection()
 
 pose = client.simGetVehiclePose()

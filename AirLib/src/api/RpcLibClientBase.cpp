@@ -338,7 +338,7 @@ __pragma(warning(disable : 4239))
         {
             const auto& response_adaptor = pimpl_->client.call("simGetImages",
                                                                RpcLibAdaptorsBase::ImageRequest::from(request),
-                                                               vehicle_name)
+                                                               vehicle_name, true)
                                                .as<vector<RpcLibAdaptorsBase::ImageResponse>>();
 
             return RpcLibAdaptorsBase::ImageResponse::to(response_adaptor);

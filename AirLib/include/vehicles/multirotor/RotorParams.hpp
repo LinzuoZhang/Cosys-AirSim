@@ -55,7 +55,6 @@ namespace airlib
             max_speed = revolutions_per_second * 2 * M_PIf; // radians / sec
             max_speed_square = pow(max_speed, 2.0f);
 
-            real_T nsquared = revolutions_per_second * revolutions_per_second;
             // max_thrust = C_T * air_density * nsquared * static_cast<real_T>(pow(propeller_diameter, 4));
             // max_torque = C_P * air_density * nsquared * static_cast<real_T>(pow(propeller_diameter, 5)) / (2 * M_PIf);
             max_thrust = 2.92446268f;

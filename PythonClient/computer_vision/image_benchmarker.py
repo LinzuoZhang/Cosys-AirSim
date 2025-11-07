@@ -44,7 +44,7 @@ class ImageBenchmarker():
             viz_image_cv2 = False,
             save_images = False,
             img_type = "scene"):
-        self.airsim_client = airsim.VehicleClient()
+        self.airsim_client = airsim.VehicleClient("127.0.0.1")
         self.airsim_client.confirmConnection()
         self.image_benchmark_num_images = 0
         self.image_benchmark_total_time = 0.0
@@ -140,7 +140,7 @@ def main(args):
                                       save_images=args.save_images, img_type=args.img_type)
 
     image_benchmarker.start_img_benchmark_thread()
-    time.sleep(args.time)
+    time.sleep(10)
     image_benchmarker.stop_img_benchmark_thread()
 
 if __name__ == "__main__":
