@@ -18,7 +18,7 @@ class AIRSIM_API AFlyingPawn : public APawn
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Debugging")
     float RotatorFactor = 1.0f;
-
+    std::string UEMessage;
     AFlyingPawn();
     virtual void BeginPlay() override;
     virtual void Tick(float DeltaSeconds) override;
@@ -36,7 +36,7 @@ public:
     //called by API to set rotor speed
     void setRotorSpeed(const std::vector<MultirotorPawnEvents::RotorActuatorInfo>& rotor_infos);
     void initializeRotors(const std::vector<MultirotorPawnEvents::RotorActuatorInfo>& rotor_infos);
-
+    void setMessage(const std::string& message);
 private: //variables
     //Unreal components
     UPROPERTY()

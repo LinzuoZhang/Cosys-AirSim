@@ -540,6 +540,11 @@ void PawnSimApi::setTraceLine(const std::vector<float>& color_rgba, float thickn
     trace_thickness_ = thickness;
 }
 
+void PawnSimApi::setUEMessageToVehicle(const std::string& message)
+{
+    UAirBlueprintLib::LogMessageString("Message from UE: ", message, LogDebugLevel::Informational);
+}
+
 void PawnSimApi::allowPassthroughToggleInput()
 {
     state_.passthrough_enabled = !state_.passthrough_enabled;

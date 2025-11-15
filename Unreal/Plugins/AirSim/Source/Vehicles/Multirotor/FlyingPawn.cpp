@@ -8,6 +8,7 @@ AFlyingPawn::AFlyingPawn()
 {
     init_id_ = pawn_events_.getActuatorSignal().connect_member(this, &AFlyingPawn::initializeRotors);
     pawn_events_.getActuatorSignal().connect_member(this, &AFlyingPawn::setRotorSpeed);
+    pawn_events_.getMessagesSignal().connect_member(this, &AFlyingPawn::setMessage);
 }
 
 void AFlyingPawn::BeginPlay()
@@ -45,6 +46,7 @@ void AFlyingPawn::EndPlay(const EEndPlayReason::Type EndPlayReason)
     camera_bottom_center_ = nullptr;
 
     pawn_events_.getActuatorSignal().disconnect_all();
+    pawn_events_.getMessagesSignal().disconnect_all();
     rotating_movements_.Empty();
 
     Super::EndPlay(EndPlayReason);
@@ -95,4 +97,9 @@ void AFlyingPawn::initializeRotors(const std::vector<MultirotorPawnEvents::Rotor
         rotating_movements_.Add(UAirBlueprintLib::GetActorComponent<URotatingMovementComponent>(this, TEXT("Rotation") + FString::FromInt(i)));
     }
     pawn_events_.getActuatorSignal().disconnect(init_id_);
+}
+
+void AFlyingPawn::setMessage(const std::string& message)
+{
+    UEMessage = message;
 }

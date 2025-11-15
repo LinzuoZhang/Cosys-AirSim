@@ -181,6 +181,7 @@ namespace airlib
         void simSetPhysicsRawKinematics(const Kinematics::State& state, const std::string& vehicle_name = "");
         msr::airlib::Environment::State simGetGroundTruthEnvironment(const std::string& vehicle_name = "") const;
         std::vector<std::string> simSwapTextures(const std::string& tags, int tex_id = 0, int component_id = 0, int material_id = 0);
+        void sendUEMessageToVehicle(const std::string& vehicle_name, const std::string& message);
         bool simSetObjectMaterial(const std::string& object_name, const std::string& material_name, const int component_id = 0);
         bool simSetObjectMaterialFromTexture(const std::string& object_name, const std::string& texture_path, const int component_id = 0);
 

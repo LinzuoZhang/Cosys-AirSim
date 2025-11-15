@@ -591,6 +591,10 @@ namespace airlib
             getVehicleApi(vehicle_name)->cancelLastTask();
         });
 
+        pimpl_->server.bind("sendUEMessageToVehicle", [&](const std::string& message, const std::string& vehicle_name) -> void {
+            return getVehicleSimApi(vehicle_name)->setUEMessageToVehicle(message);
+        });
+
         pimpl_->server.bind("simSwapTextures", [&](const std::string tag, int tex_id, int component_id, int material_id) -> std::vector<string> {
             return *getWorldSimApi()->swapTextures(tag, tex_id, component_id, material_id);
         });

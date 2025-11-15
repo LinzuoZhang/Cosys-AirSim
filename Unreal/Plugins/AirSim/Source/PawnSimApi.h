@@ -101,7 +101,7 @@ public: //implementation of VehicleSimApiBase
     }
     virtual void toggleTrace() override;
     virtual void setTraceLine(const std::vector<float>& color_rgba, float thickness) override;
-
+    virtual void setUEMessageToVehicle(const std::string& message) override;
     virtual void updateRenderedState(float dt) override;
     virtual void updateRendering(float dt) override;
     virtual const msr::airlib::Kinematics::State* getGroundTruthKinematics() const override;

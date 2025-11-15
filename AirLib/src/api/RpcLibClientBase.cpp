@@ -612,6 +612,11 @@ __pragma(warning(disable : 4239))
             return pimpl_->client.call("simSwapTextures", tags, tex_id, component_id, material_id).as<vector<string>>();
         }
 
+        void RpcLibClientBase::sendUEMessageToVehicle(const std::string& vehicle_name, const std::string& message)
+        {
+            pimpl_->client.call("sendUEMessageToVehicle", vehicle_name, message);
+        }
+
         bool RpcLibClientBase::simSetObjectMaterial(const std::string& object_name, const std::string& material_name, const int component_id)
         {
             return pimpl_->client.call("simSetObjectMaterial", object_name, material_name, component_id).as<bool>();

@@ -20,10 +20,12 @@ public: //types
     };
 
     typedef common_utils::Signal<const std::vector<RotorActuatorInfo>&> ActuatorsSignal;
-
+    typedef common_utils::Signal<const std::string &> MessagesSignal;
 public:
     ActuatorsSignal& getActuatorSignal();
+    MessagesSignal& getMessagesSignal();
 
 private:
     ActuatorsSignal actuator_signal_;
+    MessagesSignal messages_signal_;
 };

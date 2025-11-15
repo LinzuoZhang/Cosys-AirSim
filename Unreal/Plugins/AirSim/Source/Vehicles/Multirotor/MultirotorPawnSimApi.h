@@ -48,6 +48,8 @@ public:
     virtual void setKinematics(const Kinematics::State& state, bool ignore_collision) override;
     virtual void pawnTick(float dt) override;
 
+    virtual void setUEMessageToVehicle(const std::string& message) override;
+
     msr::airlib::MultirotorApiBase* getVehicleApi() const
     {
         return vehicle_api_.get();

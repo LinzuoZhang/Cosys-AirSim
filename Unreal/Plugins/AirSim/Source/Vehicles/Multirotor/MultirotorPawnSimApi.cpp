@@ -182,4 +182,9 @@ MultirotorPawnSimApi::UpdatableObject* MultirotorPawnSimApi::getPhysicsBody()
 {
     return multirotor_physics_body_->getPhysicsBody();
 }
+
+void MultirotorPawnSimApi::setUEMessageToVehicle(const std::string& message)
+{
+    pawn_events_->getMessagesSignal().emit(message);
+}
 //*** End: UpdatableState implementation ***//
