@@ -101,5 +101,5 @@ void AFlyingPawn::initializeRotors(const std::vector<MultirotorPawnEvents::Rotor
 
 void AFlyingPawn::setMessage(const std::string& message)
 {
-    UEMessage = message;
+    UEMessage = UTF8_TO_TCHAR(message.c_str());
 }

@@ -18,7 +18,8 @@ class AIRSIM_API AFlyingPawn : public APawn
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Debugging")
     float RotatorFactor = 1.0f;
-    std::string UEMessage;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Debugging")
+    FString UEMessage;
     AFlyingPawn();
     virtual void BeginPlay() override;
     virtual void Tick(float DeltaSeconds) override;
