@@ -614,7 +614,7 @@ __pragma(warning(disable : 4239))
 
         void RpcLibClientBase::sendUEMessageToVehicle(const std::string& vehicle_name, const std::string& message)
         {
-            pimpl_->client.call("sendUEMessageToVehicle", vehicle_name, message);
+            pimpl_->client.call("sendUEMessageToVehicle", message, vehicle_name);
         }
 
         bool RpcLibClientBase::simSetObjectMaterial(const std::string& object_name, const std::string& material_name, const int component_id)
@@ -650,7 +650,7 @@ __pragma(warning(disable : 4239))
 
         msr::airlib::Pose RpcLibClientBase::simGetObjectPose(const std::string& object_name, bool ned) const
         {
-            return pimpl_->client.call("simGetObjectPose", object_name, ned).as<RpcLibAdaptorsBase::Pose>().to();
+            return pimpl_->client.call("simGetObjectPose", object_name).as<RpcLibAdaptorsBase::Pose>().to();
         }
 
         bool RpcLibClientBase::simSetObjectPose(const std::string& object_name, const msr::airlib::Pose& pose, bool teleport)

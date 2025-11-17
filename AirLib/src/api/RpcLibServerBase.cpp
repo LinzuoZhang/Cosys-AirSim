@@ -473,8 +473,8 @@ namespace airlib
             return RpcLibAdaptorsBase::Pose::from(getWorldSimApi()->listInstanceSegmentationPoses(ned, only_visible));
         });
 
-        pimpl_->server.bind("simGetObjectPose", [&](const std::string& object_name, bool ned) -> RpcLibAdaptorsBase::Pose {
-            const auto& pose = getWorldSimApi()->getObjectPose(object_name, ned);
+        pimpl_->server.bind("simGetObjectPose", [&](const std::string& object_name) -> RpcLibAdaptorsBase::Pose {
+            const auto& pose = getWorldSimApi()->getObjectPose(object_name, false);
             return RpcLibAdaptorsBase::Pose(pose);
         });
 
