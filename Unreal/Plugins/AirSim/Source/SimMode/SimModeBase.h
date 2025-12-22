@@ -46,6 +46,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "airsim | Utils")
     bool EnableReport = false;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "airsim | Utils")
+    bool IsFinished = false;
+
+
     UFUNCTION(BlueprintCallable, Category = "airsim | Utils")
     bool toggleRecording();
 

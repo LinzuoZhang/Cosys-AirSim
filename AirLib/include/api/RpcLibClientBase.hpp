@@ -190,6 +190,8 @@ namespace airlib
         void stopRecording();
         bool isRecording();
 
+        bool isFinished();
+
         void simSetWind(const Vector3r& wind) const;
         void simSetExtForce(const Vector3r& ext_force) const;
 

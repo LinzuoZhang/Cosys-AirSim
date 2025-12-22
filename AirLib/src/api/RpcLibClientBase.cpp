@@ -751,6 +751,11 @@ __pragma(warning(disable : 4239))
             return pimpl_->client.call("isRecording").as<bool>();
         }
 
+        bool RpcLibClientBase::isFinished()
+        {
+            return pimpl_->client.call("isFinished").as<bool>();
+        }
+
         void RpcLibClientBase::simSetWind(const Vector3r& wind) const
         {
             RpcLibAdaptorsBase::Vector3r conv_wind(wind);

@@ -40,9 +40,9 @@ if z > 10:
     z = 10
     client.moveToZAsync(-z, 3).join()
     client.hoverAsync().join()
-client.client.call("sendUEMessageToVehicle", "P","drone_1")
-time.sleep(3)
-client.client.call("sendUEMessageToVehicle", "G","drone_1")
+# client.client.call("sendUEMessageToVehicle", "P","drone_1")
+# time.sleep(3)
+# client.client.call("sendUEMessageToVehicle", "G","drone_1")
 # print("landing...")
 # client.landAsync().join()
 # print("disarming...")

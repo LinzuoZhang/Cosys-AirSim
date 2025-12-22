@@ -616,7 +616,11 @@ namespace airlib
         });
 
         pimpl_->server.bind("isRecording", [&]() -> bool {
-            return getWorldSimApi()->isRecording();
+            return getWorldSimApi()->getFinishedFlag();
+        });
+
+        pimpl_->server.bind("isFinished", [&]() -> bool {
+            return getWorldSimApi()->getFinishedFlag();
         });
 
         pimpl_->server.bind("simSetWind", [&](const RpcLibAdaptorsBase::Vector3r& wind) -> void {

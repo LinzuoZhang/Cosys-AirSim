@@ -1597,7 +1597,7 @@ void ASimModeBase::reset()
             api->reset();
         }
     }, true);
-    
+    IsFinished = false;
     FOnResetEvent.Broadcast();
 }
 

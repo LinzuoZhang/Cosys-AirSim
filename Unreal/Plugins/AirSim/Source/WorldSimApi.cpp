@@ -1145,3 +1145,8 @@ std::vector<msr::airlib::DetectionInfo> WorldSimApi::getDetections(ImageCaptureB
 
     return result;
 }
+
+bool WorldSimApi::getFinishedFlag() const
+{
+    return simmode_->IsFinished;
+}
